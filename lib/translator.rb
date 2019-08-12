@@ -6,10 +6,11 @@ require "yaml"
 def load_library
   library = YAML.load_file('emoticons.yml')
   sorted = {"get_meaning" => {}, "get_emotion" => {}} 
-  library.each {|emotion,array| #array is english at i[0] and japanese at i[1]
+  library.each do |emotion,array| #array is english at i[0] and japanese at i[1]
     sorted["get_meaning"][array[1]] = emotion
     sorted["get_emotion"][array[0]] = array[1]
-  }
+  end
+  sorted
 end
 
 def get_japanese_emoticon
