@@ -3,7 +3,7 @@
 #get_emotion is {eng emote => japanese emote}
 require "yaml"
 
-def load_library
+def load_library("./lib/emoticons.yml")
   library = YAML.load_file('emoticons.yml')
   sorted = {"get_meaning" => {}, "get_emotion" => {}} 
   library.each do |emotion,array| #array is english at i[0] and japanese at i[1]
