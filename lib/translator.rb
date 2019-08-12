@@ -5,10 +5,10 @@ require "yaml"
 
 def load_library(file_path)
   library = YAML.load_file(file_path)
-  sorted = {:get_meaning => {}, :get_emotion => {}} 
+  sorted = {:get_meaning => {}, :get_emoticon => {}} 
   library.each do |emotion,array| #array is english at i[0] and japanese at i[1]
     sorted[:get_meaning][array[1]] = emotion
-    sorted[:get_emotion][array[0]] = array[1]
+    sorted[:get_emoticon][array[0]] = array[1]
   end
   sorted
 end
