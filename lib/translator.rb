@@ -22,6 +22,10 @@ def get_japanese_emoticon(file_path,emoticon_english)
   end
 end
 
-def get_english_meaning
-  # code goes here
+def get_english_meaning(file_path,japanese_emoticon)
+  emoticons = load_library(file_path)
+  if emoticons[:get_meaning].include?(japanese_emoticon)
+    emoticons[:get_meaning][japanese_emoticon]
+  else
+    ""
 end
